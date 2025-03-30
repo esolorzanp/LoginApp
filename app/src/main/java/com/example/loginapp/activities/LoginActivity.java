@@ -1,6 +1,8 @@
 package com.example.loginapp.activities;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +12,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.loginapp.R;
 
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
+    private EditText email;
+    private EditText password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,5 +26,16 @@ public class Login extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        this.email = findViewById(R.id.editTextEmailLogin);
+        this.password = findViewById(R.id.editTextPasswordLogin);
+    }
+
+    public void onLogin(View v) {
+
+    }
+
+    public void onCleanForm(View v) {
+        this.email.setText("");
+        this.password.setText("");
     }
 }

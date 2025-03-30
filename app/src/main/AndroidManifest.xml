@@ -19,7 +19,7 @@
             android:name=".activities.MenuActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.Login"
+            android:name=".activities.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -15,7 +15,8 @@
         android:textSize="24sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="84dp" />
+        tools:layout_editor_absoluteY="84dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/buttonUsuarios"
@@ -23,7 +24,8 @@
         android:layout_height="wrap_content"
         android:text="Usuarios"
         tools:layout_editor_absoluteX="109dp"
-        tools:layout_editor_absoluteY="170dp" />
+        tools:layout_editor_absoluteY="170dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/buttonSalir"
@@ -31,5 +33,6 @@
         android:layout_height="wrap_content"
         android:text="Salir"
         tools:layout_editor_absoluteX="221dp"
-        tools:layout_editor_absoluteY="170dp" />
+        tools:layout_editor_absoluteY="170dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
