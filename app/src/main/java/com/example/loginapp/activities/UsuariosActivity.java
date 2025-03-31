@@ -41,7 +41,7 @@ public class UsuariosActivity extends AppCompatActivity {
     }
 
     public void onCallMenuPrincipal(View v) {
-        Intent intMain = new Intent(this, MenuActivity.class);
+        Intent intMain = new Intent(this, MenuPrincipalActivity.class);
         startActivity(intMain);
     }
 
@@ -51,7 +51,8 @@ public class UsuariosActivity extends AppCompatActivity {
             SharedPreferences.Editor edt = sp.edit();
             edt.putString("Email", this.email.getText().toString());
             edt.putString("Nombre_compleo", this.nombreCompleto.getText().toString());
-            edt.putString("Password", email.getText().toString());
+//            edt.putString("Password", new Crypt().toEncrypt(password.getText().toString()));
+            edt.putString("Password", password.getText().toString());
             edt.commit();
             Toast.makeText(this, "Usuario guardado exitosamente", Toast.LENGTH_LONG).show();
         }
@@ -86,6 +87,7 @@ public class UsuariosActivity extends AppCompatActivity {
         SharedPreferences sp = getSharedPreferences("AppLoginApp", Context.MODE_PRIVATE);
         email.setText(sp.getString("Email", ""));
         nombreCompleto.setText(sp.getString("Nombre_compleo", ""));
-        //password.setText(sp.getString("Password",""));
+        password.setText("");
+        confPassword.setText("");
     }
 }

@@ -1,5 +1,6 @@
 package com.example.loginapp.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -10,7 +11,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.loginapp.R;
 
-public class MenuActivity extends AppCompatActivity {
+public class MenuPrincipalActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,5 +23,15 @@ public class MenuActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    public void onCallLogin() {
+        Intent intentLogin = new Intent(this, LoginActivity.class);
+        startActivity(intentLogin);
+    }
+
+    public void onCallUsuariosManager(){
+        Intent intentUsuarios = new Intent(this, UsuariosActivity.class);
+        startActivity(intentUsuarios);
     }
 }

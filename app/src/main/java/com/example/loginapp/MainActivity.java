@@ -26,12 +26,13 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         this.callLogin();
+        //this.callUsuarios();
     }
 
-    public void callUsuarios() {
-        Intent intentUsuarios = new Intent(this, UsuariosActivity.class);
-        startActivity(intentUsuarios);
-    }
+//    public void callUsuarios() {
+//        Intent intentUsuarios = new Intent(this, UsuariosActivity.class);
+//        startActivity(intentUsuarios);
+//    }
 
     public void callLogin() {
         Intent intentLogin = new Intent(this, LoginActivity.class);

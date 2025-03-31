@@ -11,11 +11,12 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="97dp"
+        android:layout_marginTop="72dp"
         android:text="Login"
-        android:textSize="24sp"
+        android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
@@ -76,6 +77,7 @@
         android:text="Limpiar"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonIngresar"
         app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="onCleanForm"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -87,5 +89,6 @@
         android:text="Ingresar"
         app:layout_constraintEnd_toStartOf="@+id/buttonLimpiar"
         app:layout_constraintTop_toBottomOf="@+id/editTextPasswordLogin"
+        android:onClick="onLogin"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

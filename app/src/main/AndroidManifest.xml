@@ -16,7 +16,7 @@
             android:name=".activities.UsuariosActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.MenuActivity"
+            android:name=".activities.MenuPrincipalActivity"
             android:exported="false" />
         <activity
             android:name=".activities.LoginActivity"
