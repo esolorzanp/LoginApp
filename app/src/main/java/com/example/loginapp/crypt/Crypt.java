@@ -9,7 +9,6 @@ public class Crypt {
         try {
             md = MessageDigest.getInstance("SHA-256");
         } catch (NoSuchAlgorithmException e) {
-            //throw new RuntimeException(e);
             e.printStackTrace();
             return null;
         }

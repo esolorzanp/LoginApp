@@ -15,6 +15,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.loginapp.R;
+import com.example.loginapp.crypt.Crypt;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText email;
@@ -38,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void onLogin(View v) {
         if (validateFields()) {
-            callMenuPrincipal();
+            callMenu();
         }
     }
 
@@ -67,16 +68,13 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences sp = getSharedPreferences("AppLoginApp", Context.MODE_PRIVATE);
         String emailSp = sp.getString("Email", "");
         String passwordSp = sp.getString("Password", "");
-        System.out.println("password=" + password.toString());
-        System.out.println("passwordSp=" + passwordSp.toString());
         if (!this.email.getText().toString().equals(emailSp.toString())) return false;
-//        if (!new Crypt().toEncrypt(password.getText().toString()).equals(passwordSp)) return false;
-        if (!this.password.getText().toString().equals(passwordSp)) return false;
+        if (!new Crypt().toEncrypt(password.getText().toString()).equals(passwordSp)) return false;
         return true;
     }
 
-    public void callMenuPrincipal() {
-        Intent intentMenu = new Intent(this, MenuPrincipalActivity.class);
+    public void callMenu() {
+        Intent intentMenu = new Intent(this, MenuActivity.class);
         startActivity(intentMenu);
     }
 }

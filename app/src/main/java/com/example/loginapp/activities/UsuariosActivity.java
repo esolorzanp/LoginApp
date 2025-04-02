@@ -15,6 +15,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.loginapp.R;
+import com.example.loginapp.crypt.Crypt;
 
 public class UsuariosActivity extends AppCompatActivity {
 
@@ -40,8 +41,8 @@ public class UsuariosActivity extends AppCompatActivity {
         this.confPassword = findViewById(R.id.editTextPasswordConfirmacionUsuario);
     }
 
-    public void onCallMenuPrincipal(View v) {
-        Intent intMain = new Intent(this, MenuPrincipalActivity.class);
+    public void onCallMenu(View v) {
+        Intent intMain = new Intent(this, MenuActivity.class);
         startActivity(intMain);
     }
 
@@ -51,9 +52,10 @@ public class UsuariosActivity extends AppCompatActivity {
             SharedPreferences.Editor edt = sp.edit();
             edt.putString("Email", this.email.getText().toString());
             edt.putString("Nombre_compleo", this.nombreCompleto.getText().toString());
-//            edt.putString("Password", new Crypt().toEncrypt(password.getText().toString()));
-            edt.putString("Password", password.getText().toString());
+            edt.putString("Password", new Crypt().toEncrypt(password.getText().toString()));
             edt.commit();
+            password.setText("");
+            confPassword.setText("");
             Toast.makeText(this, "Usuario guardado exitosamente", Toast.LENGTH_LONG).show();
         }
     }

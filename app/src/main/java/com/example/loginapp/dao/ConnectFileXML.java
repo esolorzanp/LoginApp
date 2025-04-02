@@ -1,8 +1,5 @@
 package com.example.loginapp.dao;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-
 public class ConnectFileXML {
     private String fileName;
 

@@ -124,9 +124,11 @@
         android:id="@+id/buttonRegresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:onClick="onCallMenuPrincipal"
+        android:layout_marginEnd="4dp"
+        android:onClick="onCallMenu"
         android:text="Regresar"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonConsultar"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -137,6 +139,8 @@
         android:layout_marginEnd="4dp"
         android:onClick="onGuardar"
         android:text="Guardar"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonConsultar"
         app:layout_constraintEnd_toStartOf="@+id/buttonConsultar" />
 
@@ -148,6 +152,8 @@
         android:layout_marginBottom="136dp"
         android:onClick="onConsultar"
         android:text="Consultar"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonRegresar" />
 

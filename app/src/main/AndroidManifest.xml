@@ -13,10 +13,10 @@
         android:theme="@style/Theme.LoginApp"
         tools:targetApi="31">
         <activity
-            android:name=".activities.UsuariosActivity"
+            android:name=".activities.MenuActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.MenuPrincipalActivity"
+            android:name=".activities.UsuariosActivity"
             android:exported="false" />
         <activity
             android:name=".activities.LoginActivity"
