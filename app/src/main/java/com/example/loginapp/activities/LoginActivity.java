@@ -70,6 +70,7 @@ public class LoginActivity extends AppCompatActivity {
         String passwordSp = sp.getString("Password", "");
         if (!this.email.getText().toString().equals(emailSp.toString())) return false;
         if (!new Crypt().toEncrypt(password.getText().toString()).equals(passwordSp)) return false;
+        Toast.makeText(this, "Bienvenido " + sp.getString("Nombre_compleo",""), Toast.LENGTH_LONG).show();
         return true;
     }
 

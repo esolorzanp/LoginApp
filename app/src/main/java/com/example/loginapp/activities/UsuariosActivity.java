@@ -47,7 +47,7 @@ public class UsuariosActivity extends AppCompatActivity {
     }
 
     public void onGuardar(View v) {
-        if (validateFields()) {
+        if (validateFieldsQuery() && validateFields()) {
             SharedPreferences sp = getSharedPreferences("AppLoginApp", Context.MODE_PRIVATE);
             SharedPreferences.Editor edt = sp.edit();
             edt.putString("Email", this.email.getText().toString());
@@ -60,12 +60,17 @@ public class UsuariosActivity extends AppCompatActivity {
         }
     }
 
-    private boolean validateFields() {
+    private boolean validateFieldsQuery() {
         boolean b = true;
         if (email.getText().toString().isEmpty() || email.getText() == null) {
             Toast.makeText(this, "Campo Email no puede estar vacío", Toast.LENGTH_LONG).show();
             return false;
         }
+        return true;
+    }
+
+    private boolean validateFields() {
+        boolean b = true;
         if (nombreCompleto.getText().toString().isEmpty() || nombreCompleto.getText() == null) {
             Toast.makeText(this, "Campo Nombre completo no puede estar vacío", Toast.LENGTH_LONG).show();
             return false;
@@ -86,10 +91,16 @@ public class UsuariosActivity extends AppCompatActivity {
     }
 
     public void onConsultar(View v) {
-        SharedPreferences sp = getSharedPreferences("AppLoginApp", Context.MODE_PRIVATE);
-        email.setText(sp.getString("Email", ""));
-        nombreCompleto.setText(sp.getString("Nombre_compleo", ""));
-        password.setText("");
-        confPassword.setText("");
+        if (validateFieldsQuery()) {
+            SharedPreferences sp = getSharedPreferences("AppLoginApp", Context.MODE_PRIVATE);
+            if (!email.getText().toString().equals(sp.getString("Email", "").toString())) {
+                Toast.makeText(this, "Email no registrado", Toast.LENGTH_LONG).show();
+            } else {
+                email.setText(sp.getString("Email", ""));
+                nombreCompleto.setText(sp.getString("Nombre_compleo", ""));
+                password.setText("");
+                confPassword.setText("");
+            }
+        }
     }
 }
