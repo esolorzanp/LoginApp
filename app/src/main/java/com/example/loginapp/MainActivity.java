@@ -11,6 +11,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.loginapp.activities.LoginActivity;
+import com.example.loginapp.activities.UsuariosActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,10 +26,16 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         this.callLogin();
+//        this.callUsuarios();
     }
 
     public void callLogin() {
         Intent intentLogin = new Intent(this, LoginActivity.class);
         startActivity(intentLogin);
+    }
+
+    public void callUsuarios() {
+        Intent intentUsuarios = new Intent(this, UsuariosActivity.class);
+        startActivity(intentUsuarios);
     }
 }

@@ -45,11 +45,11 @@ public class LoginActivity extends AppCompatActivity {
 
     private boolean validateFields() {
         if (this.email.getText().toString().isEmpty() || this.email.getText().toString() == null) {
-            Toast.makeText(this, "Campo Email no puede estar vacío", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Ingrese un email", Toast.LENGTH_LONG).show();
             return false;
         }
         if (this.password.getText().toString().isEmpty() || this.password.getText().toString() == null) {
-            Toast.makeText(this, "Campo Contraseña no puede estar vacío", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Ingrese la contraseña", Toast.LENGTH_LONG).show();
             return false;
         }
         if (!validateEmailPassword()) {
