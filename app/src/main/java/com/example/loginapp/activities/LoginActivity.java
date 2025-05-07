@@ -16,6 +16,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.loginapp.R;
 import com.example.loginapp.crypt.Crypt;
+import com.example.loginapp.dao.UsuarioDao;
+import com.example.loginapp.model.Usuario;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText email;
@@ -65,13 +67,21 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public boolean validateEmailPassword() {
-        SharedPreferences sp = getSharedPreferences("AppLoginApp", Context.MODE_PRIVATE);
-        String emailSp = sp.getString("Email", "");
-        String passwordSp = sp.getString("Password", "");
-        if (!this.email.getText().toString().equals(emailSp.toString())) return false;
-        if (!new Crypt().toEncrypt(password.getText().toString()).equals(passwordSp)) return false;
-        Toast.makeText(this, "Bienvenido " + sp.getString("Nombre_compleo",""), Toast.LENGTH_LONG).show();
-        return true;
+        UsuarioDao dao = new UsuarioDao(this);
+        if (dao.exist(this.email.getText().toString())) {
+            Usuario u = dao.findBy(this.email.getText().toString());
+            String emailSp = u.getEmail();
+            String passwordSp = u.getPassword();
+            System.out.println("email = " + email);
+            System.out.println("uusario = " + u);
+            if (!this.email.getText().toString().equals(emailSp.toString())) return false;
+            if (!new Crypt().toEncrypt(password.getText().toString()).equals(passwordSp))
+                return false;
+            Toast.makeText(this, "Bienvenido " + u.getNombreCompleto(), Toast.LENGTH_LONG).show();
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void callMenu() {

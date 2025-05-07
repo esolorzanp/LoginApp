@@ -32,7 +32,6 @@ public class UsuarioDao {
                 usuarios.add(usuario);
             }
         }
-        System.out.println(usuarios);
     }
 
     public void guardarUsuariosToSP() {
@@ -101,7 +100,7 @@ public class UsuarioDao {
 
     public boolean exist(String e) {
         for (Usuario u : usuarios) {
-            if (e.equals(u.getEmail())) {
+            if (e.toString().equals(u.getEmail().toString())) {
                 return true;
             }
         }
